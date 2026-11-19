@@ -1,0 +1,25 @@
+{
+  "name": "deepshield-ai",
+  "version": "1.0.0",
+  "description": "DeepShield AI: AI-Based System for Detecting Deepfakes, Social Engineering Attacks, and Bank Fraud",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client",
+    "desktop"
+  ],
+  "scripts": {
+    "setup": "npm install --prefix server && npm install --prefix client && npm install --prefix desktop",
+    "seed": "npm run seed --prefix server",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "train": "npm run train --prefix server",
+    "evaluate": "npm run evaluate --prefix server",
+    "test": "npm run test --prefix server",
+    "build": "npm run build --prefix client",
+    "desktop:dev": "npm run dev --prefix desktop",
+    "desktop:build": "npm run build --prefix desktop"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
